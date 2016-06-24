@@ -52,7 +52,12 @@ dialog.on('GetClassSchedule',function(session, args){
 server.use(ucBot.verifyBotFramework({ appId: 'UCBOT', appSecret: 'f0f5245b1b15439a850f051fb7c87133' }));
 //register a base url and have the bot listen to requests
 server.post('/v1/messages', ucBot.listen());
+//hand default get route incase of navigating with browser
+server.get('/', function(req, res, next) {
+  res.send('taller louder drier fatter');
+  next();
+});
 //start the slaver
-server.listen(8080, function () {
+server.listen(process.env.PORT || 5000, function () {
     console.log('%s listening to %s', server.name, server.url);
 });
