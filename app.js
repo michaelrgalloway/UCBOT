@@ -47,6 +47,6 @@ server.use(ucBot.verifyBotFramework({ appId: 'UCBOT', appSecret: 'f0f5245b1b1543
 //register a base url and have the bot listen to requests
 server.post('/v1/messages', ucBot.listen());
 //start the slaver
-server.listen(8080, function () {
+server.listen(process.env.PORT || 5000, function () {
     console.log('%s listening to %s', server.name, server.url);
 });
