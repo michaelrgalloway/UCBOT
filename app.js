@@ -3,7 +3,7 @@ var restify = require('restify');
 //cross platform bot library provided by MS
 var builder = require('botbuilder');
 //LUIS Natural Language processing service to help us gain intent. 
-var model = 'https://api.projectoxford.ai/luis/v1/application?id=9e854f7e-5e36-495a-8359-978b8b70c922&subscription-key=9777de16400942eab60b0a8fdcfa2135'
+var model = 'https://api.projectoxford.ai/luis/v1/application?id=e1c8189d-a1e1-460c-af14-c23f8719d69f&subscription-key=48fcce0fdf584caa8ccb0c93aa46b126'
 //Create an instance of a restful web server
 var server = restify.createServer();
 //a Bot dialog object that helps us connect to LUIS, basically abstracts out the callback nature of intent handling
@@ -23,6 +23,8 @@ dialog.on('GetBooks',function(session, args){
         '*ISBN 123456789 ![duck](http://aka.ms/Fo983c)\r\n\r\n'+
         '*Tuesdays 8:30am - 9:30am\r\n\r\n'+
         '*Thursdays 2:00pm - 3:30pm');
+
+       
 
         
 
