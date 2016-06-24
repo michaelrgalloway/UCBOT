@@ -33,6 +33,7 @@ dialog.on('GetBooks',function(session, args){
 //another intent handler
 dialog.on('GetClassInformation',function(session, args){
     var cl = builder.EntityRecognizer.findEntity(args.entities, 'course');
+
     session.send('Here is some information for course **'+cl.entity+'**\r\n\r\n'+
         '*School: Math and Sciences\r\n\r\n'+
         '*Building: East Wing\r\n\r\n'+ 
