@@ -9,6 +9,7 @@ class CourseLuisDialog {
     GetClassInformation(session, args) {
         var cl = botframework.EntityRecognizer.findEntity(args.entities, 'course');
         //reach out to course service for some data
+        this._courseService = new course_service_1.CourseService();
         var course = this._courseService.getCourseByCourseName(cl.entity);
         session.send(`Here is some information for course **${cl.entity}**\r\n\r\n' +
             '*School: ${course.school}\r\n\r\n' +
