@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": false
+    },
+    "exclude": [
+        "node_modules",
+        "typings/global",
+        "typings/global/index.d.ts"
+    ]
+}
