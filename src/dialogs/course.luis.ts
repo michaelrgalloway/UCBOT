@@ -51,4 +51,6 @@ class CourseLuisDialog {
 
 }
 
-export default new CourseLuisDialog().ConstructDialog();
+var cld = new CourseLuisDialog().ConstructDialog();
+
+export default cld;

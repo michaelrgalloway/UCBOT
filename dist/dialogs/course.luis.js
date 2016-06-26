@@ -39,5 +39,6 @@ class CourseLuisDialog {
         return dialog;
     }
 }
+var cld = new CourseLuisDialog().ConstructDialog();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = new CourseLuisDialog().ConstructDialog();
+exports.default = cld;
