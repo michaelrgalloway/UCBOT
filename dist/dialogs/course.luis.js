@@ -3,8 +3,8 @@ const botframework = require('botbuilder');
 const globals_1 = require('../config/globals');
 const course_service_1 = require('../services/course/course.service');
 class CourseLuisDialog {
-    constructor(_courseService) {
-        this._courseService = _courseService;
+    constructor() {
+        this._courseService = new course_service_1.CourseService();
     }
     GetClassInformation(session, args) {
         var cl = botframework.EntityRecognizer.findEntity(args.entities, 'course');
@@ -40,4 +40,4 @@ class CourseLuisDialog {
     }
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = new CourseLuisDialog(new course_service_1.CourseService()).ConstructDialog();
+exports.default = new CourseLuisDialog().ConstructDialog();

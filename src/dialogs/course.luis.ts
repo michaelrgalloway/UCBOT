@@ -4,16 +4,16 @@ import { Course } from '../models/course.model';
 import { CourseService } from '../services/course/course.service';
 
 class CourseLuisDialog {
-    
-    constructor(private _courseService:CourseService){
-
+    private _courseService: CourseService;
+    constructor() {
+        this._courseService = new CourseService()
     }
-    
+
     public GetClassInformation(session: botframework.Session, args: any): void {
         var cl = botframework.EntityRecognizer.findEntity(args.entities, 'course');
         //reach out to course service for some data
         var course = this._courseService.getCourseByCourseName(cl.entity);
-        
+
         session.send(`Here is some information for course **${cl.entity}**\r\n\r\n' +
             '*School: ${course.school}\r\n\r\n' +
             '*Building: ${course.building}\r\n\r\n' +
@@ -51,4 +51,4 @@ class CourseLuisDialog {
 
 }
 
-export default new CourseLuisDialog(new CourseService()).ConstructDialog();
+export default new CourseLuisDialog().ConstructDialog();
