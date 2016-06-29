@@ -6,7 +6,7 @@ import { CourseService } from '../services/course/course.service';
 class CourseLuisDialog {
 
     constructor() {
-      
+
     }
 
     public GetClassInformation(session: botframework.Session, args: any): void {
@@ -15,12 +15,22 @@ class CourseLuisDialog {
         let _courseService = new CourseService();
         let course = _courseService.getCourseByCourseName(cl.entity);
 
-        session.send(`Here is some information for course **${cl.entity}**\r\n\r\n
+        let textResponse = `Here is some information for course **${cl.entity}**\r\n\r\n
                       *School: ${course.school}\r\n\r\n
                       *Building: ${course.building}\r\n\r\n
                       *Instructor: ${course.instructor}\r\n\r\n
                       *Required Books for Course: ISBN 14585421214, Book of Hard Knocks\r\n\r\n
-                      *Next available opening: ${course.nextsession}`);
+                      *Next available opening: ${course.nextsession}`
+
+        var reply = new builder.Message().setText(session, textResponse)
+                .addAttachment({ fallbackText: text, contentType: 'image/jpeg', contentUrl: 'http://neveryetmelted.com/wp-images/SpockSalute.jpg' });
+        session.send(reply);
+        // session.send(`Here is some information for course **${cl.entity}**\r\n\r\n
+        //               *School: ${course.school}\r\n\r\n
+        //               *Building: ${course.building}\r\n\r\n
+        //               *Instructor: ${course.instructor}\r\n\r\n
+        //               *Required Books for Course: ISBN 14585421214, Book of Hard Knocks\r\n\r\n
+        //               *Next available opening: ${course.nextsession}`);
 
     }
 

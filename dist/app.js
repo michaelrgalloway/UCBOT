@@ -1,8 +1,8 @@
 "use strict";
-const restify = require('restify');
-const builder = require('botbuilder');
-const globals_1 = require('./config/globals');
-const course_luis_1 = require('./dialogs/course.luis');
+var restify = require('restify');
+var builder = require('botbuilder');
+var globals_1 = require('./config/globals');
+var course_luis_1 = require('./dialogs/course.luis');
 //register a dialog
 var ucBot = new builder.BotConnectorBot({ appId: globals_1.Globals.botId, appSecret: globals_1.Globals.botSecret });
 ucBot.add('/', course_luis_1.default);

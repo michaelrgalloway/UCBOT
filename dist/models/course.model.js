@@ -1,4 +1,7 @@
 "use strict";
-class Course {
-}
+var Course = (function () {
+    function Course() {
+    }
+    return Course;
+}());
 exports.Course = Course;
